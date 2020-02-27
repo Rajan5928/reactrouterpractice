@@ -14,11 +14,14 @@ class App extends React.Component {
   onUserLoggedIn = () => {
   this.setState({ userLoggedIn: true});
   }
+  onUserLoggedOut = () => {
+    this.setState({ userLoggedIn: false });
+  }
   render(){
     return (
       <BrowserRouter>
         <div className="App">
-          <Nav loggedInStatus={this.state.userLoggedIn}/>
+          <Nav loggedInStatus={this.state.userLoggedIn} onUserLoggedOut={this.onUserLoggedOut} />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />

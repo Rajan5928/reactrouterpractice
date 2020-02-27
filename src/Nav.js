@@ -22,7 +22,7 @@ class Nav extends React.Component {
                         <li>Shop</li>
                     </Link>
                     {
-                        this.props.loggedInStatus ? <button>LOGOUT</button> : 
+                        this.props.loggedInStatus ? <button onClick={this.props.onUserLoggedOut}>LOGOUT</button> : 
                             <Link style={{ color: this.state.color }} to="/login">
                                 <li>LOGIN</li>
                             </Link>
